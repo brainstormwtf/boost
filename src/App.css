@@ -1,38 +1,242 @@
-.App {
+/* src/App.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e0f7fa; /* Light blue background */
+  color: black;
+}
+
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  padding: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  background-color: #333;
+  color: orange;
+  padding: 10px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: 'Anton', sans-serif; /* Apply Anton font */
+  font-weight: bold;
+  font-style: italic;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.login-buttons button {
+  margin-left: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #555;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  background-color: #444;
+  color: white;
+  padding: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card {
+  background-color: #f0f0f0; /* Light grey background */
+  border: 1px solid #ddd;
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+.project-card p {
+  margin: 5px 0;
+}
+
+.project-card p:first-of-type {
+  font-weight: bold;
+  color: black;
+}
+
+.project-card p:nth-of-type(2) {
+  color: #ff4500; /* Orange */
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress {
+  background-color: #ff4500; /* Same color as title */
+  height: 10px;
+}
+
+.goal {
+  color: blue;
+  font-weight: bold;
+}
+
+.create-project-form {
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.create-project-form h2 {
+  margin-bottom: 20px;
+  color: #ff4500; /* Orange */
+  font-weight: bold;
+}
+
+.create-project-form label {
+  display: block;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.create-project-form input,
+.create-project-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.create-project-form button {
+  padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.notification {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.project-details {
+  background-color: #f0f0f0; /* Light grey background */
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: left;
+}
+
+.project-details img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-details h2 {
+  color: #ff4500; /* Orange */
+  font-weight: bold;
+}
+
+.project-details p {
+  color: black;
+  margin: 10px 0;
+}
+
+.project-details .goal {
+  color: blue;
+  font-weight: bold;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 600px) {
+  .project-card {
+    width: 90%;
+    margin: 10px auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .create-project-form {
+    width: 90%;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-buttons {
+    margin-top: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 10px 0;
   }
 }
